@@ -20,11 +20,17 @@
                                 <rect key="frame" x="151.5" y="104" width="111" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Create Wallet"/>
+                                <connections>
+                                    <action selector="actionCreateWallet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J0W-vP-vbF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5AY-q5-GPe">
                                 <rect key="frame" x="120.5" y="165" width="173" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Connect Peaq Network"/>
+                                <connections>
+                                    <action selector="actionConnectPeaqNetwork:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U7t-hs-IIP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
