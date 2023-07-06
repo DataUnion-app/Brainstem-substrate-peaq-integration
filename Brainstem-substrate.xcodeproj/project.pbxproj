@@ -18,6 +18,7 @@
 		226F818D2A5664E400D5C4F1 /* Brainstem_substrateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F818C2A5664E400D5C4F1 /* Brainstem_substrateTests.swift */; };
 		226F81972A5664E400D5C4F1 /* Brainstem_substrateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F81962A5664E400D5C4F1 /* Brainstem_substrateUITests.swift */; };
 		226F81992A5664E400D5C4F1 /* Brainstem_substrateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F81982A5664E400D5C4F1 /* Brainstem_substrateUITestsLaunchTests.swift */; };
+		22F3E28F2A56668900D9954C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3E28E2A56668900D9954C /* MainViewController.swift */; };
 		4C756433B666DDBF0869D310 /* Pods_Brainstem_substrate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F4A703B16C0A2E5EF51EC /* Pods_Brainstem_substrate.framework */; };
 		75EE955D583D47531766E6FC /* Pods_Brainstem_substrateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8274E8EE65BB4B1A47C8423 /* Pods_Brainstem_substrateTests.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		226F81922A5664E400D5C4F1 /* Brainstem-substrateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brainstem-substrateUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		226F81962A5664E400D5C4F1 /* Brainstem_substrateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brainstem_substrateUITests.swift; sourceTree = "<group>"; };
 		226F81982A5664E400D5C4F1 /* Brainstem_substrateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brainstem_substrateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		22F3E28E2A56668900D9954C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2636366023B472F1B71F3A3C /* Pods-Brainstem-substrate-Brainstem-substrateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brainstem-substrate-Brainstem-substrateUITests.release.xcconfig"; path = "Target Support Files/Pods-Brainstem-substrate-Brainstem-substrateUITests/Pods-Brainstem-substrate-Brainstem-substrateUITests.release.xcconfig"; sourceTree = "<group>"; };
 		506BE8EFF738D6E1E34E08A4 /* Pods-Brainstem-substrateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brainstem-substrateTests.debug.xcconfig"; path = "Target Support Files/Pods-Brainstem-substrateTests/Pods-Brainstem-substrateTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E2796CFEA048F9E23028057 /* Pods_Brainstem_substrate_Brainstem_substrateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brainstem_substrate_Brainstem_substrateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,7 @@
 			children = (
 				226F81722A5664E200D5C4F1 /* AppDelegate.swift */,
 				226F81742A5664E200D5C4F1 /* SceneDelegate.swift */,
+				22F3E28E2A56668900D9954C /* MainViewController.swift */,
 				226F81762A5664E200D5C4F1 /* ViewController.swift */,
 				226F81782A5664E200D5C4F1 /* Main.storyboard */,
 				226F817E2A5664E400D5C4F1 /* Assets.xcassets */,
@@ -157,7 +160,6 @@
 				506BE8EFF738D6E1E34E08A4 /* Pods-Brainstem-substrateTests.debug.xcconfig */,
 				8D072AAAA26268297D2A561D /* Pods-Brainstem-substrateTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -414,6 +416,7 @@
 				226F81732A5664E200D5C4F1 /* AppDelegate.swift in Sources */,
 				226F817D2A5664E200D5C4F1 /* Brainstem_substrate.xcdatamodeld in Sources */,
 				226F81752A5664E200D5C4F1 /* SceneDelegate.swift in Sources */,
+				22F3E28F2A56668900D9954C /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
