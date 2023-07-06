@@ -10,6 +10,11 @@ import IrohaCrypto
 import RobinHood
 import SubstrateSdk
 
+struct RuntimeVersion: Codable, Equatable {
+    let specVersion: UInt32
+    let transactionVersion: UInt32
+}
+
 class MainViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -33,6 +38,16 @@ class MainViewController: UIViewController {
             let seedResult = try SeedFactory().deriveSeed(from: mnemonicString.toString(), password: "")
             print(seedResult.seed.miniSeed.toHex())
             
+//            switch cryptoType {
+//            case .sr25519:
+//                return SR25519KeypairFactory()
+//            case .ed25519:
+//                return Ed25519KeypairFactory()
+//            case .substrateEcdsa:
+//                return EcdsaKeypairFactory()
+//            case .ethereumEcdsa:
+//                return BIP32KeypairFactory()
+//            }
             let keypairFactory = SR25519KeypairFactory() //Polkadot Keypair Factory
             let chaincodes: [Chaincode] = []
             
@@ -50,6 +65,9 @@ class MainViewController: UIViewController {
             print(accountId.toHex())
             let accountAddress = try SS58AddressFactory().address(fromAccountId: accountId, type: 0) //Polkadot Account Address
             print(accountAddress)
+            
+//            let metaId = UUID().uuidString
+//            print(metaId)
 
         } catch {
             print(error)
@@ -57,15 +75,32 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func actionConnectPeaqNetwork(_ sender: Any) {
-    }
-    /*
-    // MARK: - Navigation
+        do {
+            // peaq connect, runtime version
+            let operationQueue = OperationQueue()
+            let peaq_url = "wss://wsspc1-qa.agung.peaq.network"
+            let url = URL(string: peaq_url)!
+            let engine = WebSocketEngine(urls:[url])!
+            
+            let operation = JSONRPCListOperation<RuntimeVersion>(engine: engine,
+                                                                 method: "chain_getRuntimeVersion",
+                                                                 parameters: [])
+            operationQueue.addOperations([operation], waitUntilFinished: true)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+            let result = try operation.extractResultData(throwing: BaseOperationError.parentOperationCancelled)
+            print(result)
+            
+            // peaq connect, health check
+            let operationHealthCheck = JSONRPCListOperation<SubstrateHealthResult>(engine: engine,
+                                                                               method: RPCMethod.healthCheck,
+                                                                               parameters: [])
+            operationQueue.addOperations([operationHealthCheck], waitUntilFinished: true)
 
+            let resultHealthCheck = try operationHealthCheck.extractResultData(throwing: BaseOperationError.parentOperationCancelled)
+            print(resultHealthCheck)
+
+        } catch {
+            print(error)
+        }
+    }
 }
