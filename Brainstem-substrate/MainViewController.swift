@@ -45,6 +45,12 @@ class MainViewController: UIViewController {
             let secretKey = keypair.privateKey().rawData()
             print(publicKey.toHex())
             print(secretKey.toHex())
+            
+            let accountId = try publicKey.publicKeyToAccountId()
+            print(accountId.toHex())
+            let accountAddress = try SS58AddressFactory().address(fromAccountId: accountId, type: 0) //Polkadot Account Address
+            print(accountAddress)
+
         } catch {
             print(error)
         }
