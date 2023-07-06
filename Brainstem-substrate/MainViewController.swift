@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import IrohaCrypto
+import RobinHood
+import SubstrateSdk
 
 class MainViewController: UIViewController {
 
@@ -16,6 +19,19 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func actionCreateWallet(_ sender: Any) {
+        do {
+            let mnemonicCreator: IRMnemonicCreatorProtocol = IRMnemonicCreator()
+            let mnemonic = try mnemonicCreator.randomMnemonic(.entropy128)
+
+            guard let mnemonicString = try? IRMnemonicCreator()
+                    .mnemonic(fromList: mnemonic.allWords().joined(separator: " "))
+            else {
+                return
+            }
+            print(mnemonic.allWords().joined(separator: " "))
+        } catch {
+            print(error)
+        }
     }
     
     @IBAction func actionConnectPeaqNetwork(_ sender: Any) {
