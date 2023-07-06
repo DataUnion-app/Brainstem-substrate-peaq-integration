@@ -33,7 +33,18 @@ class MainViewController: UIViewController {
             let seedResult = try SeedFactory().deriveSeed(from: mnemonicString.toString(), password: "")
             print(seedResult.seed.miniSeed.toHex())
             
+            let keypairFactory = SR25519KeypairFactory() //Polkadot Keypair Factory
+            let chaincodes: [Chaincode] = []
             
+            let keypair = try keypairFactory.createKeypairFromSeed(
+                seedResult.seed.miniSeed,
+                chaincodeList: chaincodes
+            )
+            
+            let publicKey = keypair.publicKey().rawData()
+            let secretKey = keypair.privateKey().rawData()
+            print(publicKey.toHex())
+            print(secretKey.toHex())
         } catch {
             print(error)
         }
