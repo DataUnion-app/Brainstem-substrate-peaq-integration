@@ -29,6 +29,11 @@ class MainViewController: UIViewController {
                 return
             }
             print(mnemonic.allWords().joined(separator: " "))
+            
+            let seedResult = try SeedFactory().deriveSeed(from: mnemonicString.toString(), password: "")
+            print(seedResult.seed.miniSeed.toHex())
+            
+            
         } catch {
             print(error)
         }
