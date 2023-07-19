@@ -24,7 +24,6 @@ PODS:
   - RobinHood (2.6.7)
   - scrypt.c (0.1.1)
   - secp256k1.c (0.1.2)
-  - SoraKeystore (1.0.0)
   - Starscream (4.0.4)
   - SubstrateSdk (1.13.0):
     - BigInt (~> 5.0)
@@ -43,7 +42,6 @@ PODS:
   - xxHash-Swift (1.0.13)
 
 DEPENDENCIES:
-  - SoraKeystore (~> 1.0.0)
   - SubstrateSdk (from `https://github.com/nova-wallet/substrate-sdk-ios.git`, tag `1.13.0`)
 
 SPEC REPOS:
@@ -55,7 +53,6 @@ SPEC REPOS:
     - RobinHood
     - scrypt.c
     - secp256k1.c
-    - SoraKeystore
     - Starscream
     - TweetNacl
     - xxHash-Swift
@@ -78,12 +75,11 @@ SPEC CHECKSUMS:
   RobinHood: 40edb5db53d5763433af25f95d81f7860d7acdc6
   scrypt.c: b42ae06183251329d2b2c620c226fb541a4a3592
   secp256k1.c: db47b726585d80f027423682eb369729e61b3b20
-  SoraKeystore: 92cff6e2a12f212dd64ed089970ff7c365247b1c
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
   SubstrateSdk: aad6725e00295219ee9722b1975175ef4db3f4a6
   TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
   xxHash-Swift: 30bd6a7507b3b7348a277c49b1cb6346c2905ec7
 
-PODFILE CHECKSUM: b833f501423d3cf603a5965fab50318fd294d680
+PODFILE CHECKSUM: d444c2919f7219b3076cd36638d5a777075be790
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1

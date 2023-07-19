@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1A8638454F55CD2C2FC35D9B /* Pods_Brainstem_substrate_Brainstem_substrateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2796CFEA048F9E23028057 /* Pods_Brainstem_substrate_Brainstem_substrateUITests.framework */; };
+		22657E2A2A67DFEE007E9944 /* MainViewController+CreateWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22657E292A67DFEE007E9944 /* MainViewController+CreateWallet.swift */; };
+		22657E2C2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22657E2B2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift */; };
 		226F81732A5664E200D5C4F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F81722A5664E200D5C4F1 /* AppDelegate.swift */; };
 		226F81752A5664E200D5C4F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F81742A5664E200D5C4F1 /* SceneDelegate.swift */; };
-		226F81772A5664E200D5C4F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F81762A5664E200D5C4F1 /* ViewController.swift */; };
 		226F817A2A5664E200D5C4F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226F81782A5664E200D5C4F1 /* Main.storyboard */; };
 		226F817D2A5664E200D5C4F1 /* Brainstem_substrate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 226F817B2A5664E200D5C4F1 /* Brainstem_substrate.xcdatamodeld */; };
 		226F817F2A5664E400D5C4F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 226F817E2A5664E400D5C4F1 /* Assets.xcassets */; };
@@ -18,7 +19,14 @@
 		226F818D2A5664E400D5C4F1 /* Brainstem_substrateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F818C2A5664E400D5C4F1 /* Brainstem_substrateTests.swift */; };
 		226F81972A5664E400D5C4F1 /* Brainstem_substrateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F81962A5664E400D5C4F1 /* Brainstem_substrateUITests.swift */; };
 		226F81992A5664E400D5C4F1 /* Brainstem_substrateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F81982A5664E400D5C4F1 /* Brainstem_substrateUITestsLaunchTests.swift */; };
+		22D6B48D2A656C92004CA3C8 /* SS58FactoryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6B48C2A656C92004CA3C8 /* SS58FactoryExtensions.swift */; };
+		22D6B48F2A656CE3004CA3C8 /* SNAddressType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6B48E2A656CE3004CA3C8 /* SNAddressType.swift */; };
+		22D6B4912A656D10004CA3C8 /* SubstrateAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6B4902A656D10004CA3C8 /* SubstrateAlias.swift */; };
+		22D6B4932A656D67004CA3C8 /* JSONRPCAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6B4922A656D67004CA3C8 /* JSONRPCAliases.swift */; };
 		22F3E28F2A56668900D9954C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3E28E2A56668900D9954C /* MainViewController.swift */; };
+		22FFE0962A618A3300AE0B13 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FFE0952A618A3300AE0B13 /* AccountInfo.swift */; };
+		22FFE0F22A61BD8900AE0B13 /* StorageQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FFE0F12A61BD8900AE0B13 /* StorageQuery.swift */; };
+		22FFE0F42A61BE3B00AE0B13 /* StorageUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FFE0F32A61BE3B00AE0B13 /* StorageUpdate.swift */; };
 		4C756433B666DDBF0869D310 /* Pods_Brainstem_substrate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F4A703B16C0A2E5EF51EC /* Pods_Brainstem_substrate.framework */; };
 		75EE955D583D47531766E6FC /* Pods_Brainstem_substrateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8274E8EE65BB4B1A47C8423 /* Pods_Brainstem_substrateTests.framework */; };
 /* End PBXBuildFile section */
@@ -42,10 +50,11 @@
 
 /* Begin PBXFileReference section */
 		059F4A703B16C0A2E5EF51EC /* Pods_Brainstem_substrate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brainstem_substrate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22657E292A67DFEE007E9944 /* MainViewController+CreateWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+CreateWallet.swift"; sourceTree = "<group>"; };
+		22657E2B2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+ConnectPeaqNetwork.swift"; sourceTree = "<group>"; };
 		226F816F2A5664E200D5C4F1 /* Brainstem-substrate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brainstem-substrate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		226F81722A5664E200D5C4F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		226F81742A5664E200D5C4F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		226F81762A5664E200D5C4F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		226F81792A5664E200D5C4F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		226F817C2A5664E200D5C4F1 /* Brainstem_substrate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Brainstem_substrate.xcdatamodel; sourceTree = "<group>"; };
 		226F817E2A5664E400D5C4F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,7 +65,14 @@
 		226F81922A5664E400D5C4F1 /* Brainstem-substrateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brainstem-substrateUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		226F81962A5664E400D5C4F1 /* Brainstem_substrateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brainstem_substrateUITests.swift; sourceTree = "<group>"; };
 		226F81982A5664E400D5C4F1 /* Brainstem_substrateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brainstem_substrateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		22D6B48C2A656C92004CA3C8 /* SS58FactoryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SS58FactoryExtensions.swift; sourceTree = "<group>"; };
+		22D6B48E2A656CE3004CA3C8 /* SNAddressType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNAddressType.swift; sourceTree = "<group>"; };
+		22D6B4902A656D10004CA3C8 /* SubstrateAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstrateAlias.swift; sourceTree = "<group>"; };
+		22D6B4922A656D67004CA3C8 /* JSONRPCAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRPCAliases.swift; sourceTree = "<group>"; };
 		22F3E28E2A56668900D9954C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		22FFE0952A618A3300AE0B13 /* AccountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
+		22FFE0F12A61BD8900AE0B13 /* StorageQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageQuery.swift; sourceTree = "<group>"; };
+		22FFE0F32A61BE3B00AE0B13 /* StorageUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageUpdate.swift; sourceTree = "<group>"; };
 		2636366023B472F1B71F3A3C /* Pods-Brainstem-substrate-Brainstem-substrateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brainstem-substrate-Brainstem-substrateUITests.release.xcconfig"; path = "Target Support Files/Pods-Brainstem-substrate-Brainstem-substrateUITests/Pods-Brainstem-substrate-Brainstem-substrateUITests.release.xcconfig"; sourceTree = "<group>"; };
 		506BE8EFF738D6E1E34E08A4 /* Pods-Brainstem-substrateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brainstem-substrateTests.debug.xcconfig"; path = "Target Support Files/Pods-Brainstem-substrateTests/Pods-Brainstem-substrateTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E2796CFEA048F9E23028057 /* Pods_Brainstem_substrate_Brainstem_substrateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brainstem_substrate_Brainstem_substrateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,15 +136,20 @@
 		226F81712A5664E200D5C4F1 /* Brainstem-substrate */ = {
 			isa = PBXGroup;
 			children = (
+				22D6B48B2A656C80004CA3C8 /* Utils */,
 				226F81722A5664E200D5C4F1 /* AppDelegate.swift */,
 				226F81742A5664E200D5C4F1 /* SceneDelegate.swift */,
 				22F3E28E2A56668900D9954C /* MainViewController.swift */,
-				226F81762A5664E200D5C4F1 /* ViewController.swift */,
+				22657E292A67DFEE007E9944 /* MainViewController+CreateWallet.swift */,
+				22FFE0F32A61BE3B00AE0B13 /* StorageUpdate.swift */,
+				22FFE0F12A61BD8900AE0B13 /* StorageQuery.swift */,
 				226F81782A5664E200D5C4F1 /* Main.storyboard */,
 				226F817E2A5664E400D5C4F1 /* Assets.xcassets */,
 				226F81802A5664E400D5C4F1 /* LaunchScreen.storyboard */,
 				226F81832A5664E400D5C4F1 /* Info.plist */,
 				226F817B2A5664E200D5C4F1 /* Brainstem_substrate.xcdatamodeld */,
+				22FFE0952A618A3300AE0B13 /* AccountInfo.swift */,
+				22657E2B2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift */,
 			);
 			path = "Brainstem-substrate";
 			sourceTree = "<group>";
@@ -148,6 +169,17 @@
 				226F81982A5664E400D5C4F1 /* Brainstem_substrateUITestsLaunchTests.swift */,
 			);
 			path = "Brainstem-substrateUITests";
+			sourceTree = "<group>";
+		};
+		22D6B48B2A656C80004CA3C8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				22D6B48C2A656C92004CA3C8 /* SS58FactoryExtensions.swift */,
+				22D6B48E2A656CE3004CA3C8 /* SNAddressType.swift */,
+				22D6B4902A656D10004CA3C8 /* SubstrateAlias.swift */,
+				22D6B4922A656D67004CA3C8 /* JSONRPCAliases.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		E9FB6C6D7604A87C944BE6FC /* Pods */ = {
@@ -184,7 +216,7 @@
 				226F816B2A5664E200D5C4F1 /* Sources */,
 				226F816C2A5664E200D5C4F1 /* Frameworks */,
 				226F816D2A5664E200D5C4F1 /* Resources */,
-				EE64E85FE2F7FC21F9EB2CCF /* [CP] Embed Pods Frameworks */,
+				AED2392F52B360A32D1B99C3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -222,7 +254,7 @@
 				226F818E2A5664E400D5C4F1 /* Sources */,
 				226F818F2A5664E400D5C4F1 /* Frameworks */,
 				226F81902A5664E400D5C4F1 /* Resources */,
-				68E12042EBB16E9FD48C5B23 /* [CP] Embed Pods Frameworks */,
+				092CF88AD58E7B991243A1AC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,6 +337,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		092CF88AD58E7B991243A1AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Brainstem-substrate-Brainstem-substrateUITests/Pods-Brainstem-substrate-Brainstem-substrateUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Brainstem-substrate-Brainstem-substrateUITests/Pods-Brainstem-substrate-Brainstem-substrateUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Brainstem-substrate-Brainstem-substrateUITests/Pods-Brainstem-substrate-Brainstem-substrateUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		14298EEDBA876025ADDEDEB8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,23 +398,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		68E12042EBB16E9FD48C5B23 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Brainstem-substrate-Brainstem-substrateUITests/Pods-Brainstem-substrate-Brainstem-substrateUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Brainstem-substrate-Brainstem-substrateUITests/Pods-Brainstem-substrate-Brainstem-substrateUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Brainstem-substrate-Brainstem-substrateUITests/Pods-Brainstem-substrate-Brainstem-substrateUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6A133E0E3D6F98674F9B6E4B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -388,7 +420,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EE64E85FE2F7FC21F9EB2CCF /* [CP] Embed Pods Frameworks */ = {
+		AED2392F52B360A32D1B99C3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -412,11 +444,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				226F81772A5664E200D5C4F1 /* ViewController.swift in Sources */,
+				22657E2C2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift in Sources */,
 				226F81732A5664E200D5C4F1 /* AppDelegate.swift in Sources */,
 				226F817D2A5664E200D5C4F1 /* Brainstem_substrate.xcdatamodeld in Sources */,
 				226F81752A5664E200D5C4F1 /* SceneDelegate.swift in Sources */,
 				22F3E28F2A56668900D9954C /* MainViewController.swift in Sources */,
+				22D6B48D2A656C92004CA3C8 /* SS58FactoryExtensions.swift in Sources */,
+				22FFE0F22A61BD8900AE0B13 /* StorageQuery.swift in Sources */,
+				22D6B48F2A656CE3004CA3C8 /* SNAddressType.swift in Sources */,
+				22D6B4932A656D67004CA3C8 /* JSONRPCAliases.swift in Sources */,
+				22FFE0962A618A3300AE0B13 /* AccountInfo.swift in Sources */,
+				22D6B4912A656D10004CA3C8 /* SubstrateAlias.swift in Sources */,
+				22FFE0F42A61BE3B00AE0B13 /* StorageUpdate.swift in Sources */,
+				22657E2A2A67DFEE007E9944 /* MainViewController+CreateWallet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +643,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -631,6 +672,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

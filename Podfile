@@ -7,7 +7,6 @@ target 'Brainstem-substrate' do
 
   # Pods for Brainstem-substrate
   pod 'SubstrateSdk', :git => 'https://github.com/nova-wallet/substrate-sdk-ios.git', :tag => '1.13.0'
-  pod 'SoraKeystore', '~> 1.0.0'
 
   target 'Brainstem-substrateTests' do
     inherit! :search_paths
