@@ -29,6 +29,12 @@ class MainViewController: UIViewController {
     let peaq_testnet_url = "wss://wsspc1-qa.agung.peaq.network"
 
     var engine: WebSocketEngine? = nil
+    var runtimeVersion: RuntimeVersion?
+    var runtimeMetadata: RuntimeMetadataProtocol?
+    var catalog: TypeRegistryCatalog?
+    var assetModelPeaqLive: AssetModel?
+    var assetModelPeaqTest: AssetModel?
+    let liveOrTest = false
     var test_address = ""
     var test_mnemonic = ""
     var register_url = "/register"
@@ -39,12 +45,21 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        engine = WebSocketEngine(urls: [URL(string: peaq_url)!], logger: nil)
         test_address = test_address_2
         test_mnemonic = test_mnemonic_1
         register_url = brainstem_base_url + register_url
         get_nonce_url = brainstem_base_url + get_nonce_url
         login_url = brainstem_base_url + login_url
+
+        engine = WebSocketEngine(urls: [URL(string: liveOrTest ? peaq_url : peaq_testnet_url)!], logger: nil)
+        assetModelPeaqLive = AssetModel(assetId: 0, icon: nil, name: nil, symbol: "AGNG", precision: 18, priceId: nil, staking: nil, type: nil, typeExtras: nil, buyProviders: nil)
+        assetModelPeaqTest = AssetModel(assetId: 1, icon: nil, name: nil, symbol: "PEAQ", precision: 18, priceId: nil, staking: nil, type: nil, typeExtras: nil, buyProviders: nil)
+
+        do {
+            (runtimeVersion, runtimeMetadata, catalog) = try fetchRuntimeData()
+        } catch {
+            errorLabel.text = error.localizedDescription
+        }
     }
     
     @IBAction func actionCreateWallet(_ sender: Any) {
@@ -53,5 +68,63 @@ class MainViewController: UIViewController {
 
     @IBAction func actionConnectPeaqNetwork(_ sender: Any) {
         connectPeaqNetwork()
+    }
+
+    func fetchRuntimeData() throws -> (RuntimeVersion, RuntimeMetadataProtocol, TypeRegistryCatalog) {
+        do {
+            // runtime version
+            let versionOperation = JSONRPCListOperation<RuntimeVersion>(engine: engine!,
+                                                                 method: RPCMethod.getRuntimeVersion,
+                                                                 parameters: [])
+
+            OperationQueue().addOperations([versionOperation], waitUntilFinished: true)
+
+            let runtimeVersion = try versionOperation.extractNoCancellableResultData()
+            
+            // runtime metadata
+            let metadataOperation = JSONRPCOperation<[String], String>(
+                engine: engine!,
+                method: RPCMethod.getRuntimeMetadata
+            )
+            
+            OperationQueue().addOperations([metadataOperation], waitUntilFinished: true)
+            
+            let hexMetadata = try metadataOperation.extractNoCancellableResultData()
+            let rawMetadata = try Data(hexString: hexMetadata)
+            let decoder = try ScaleDecoder(data: rawMetadata)
+            let runtimeMetadataContainer = try RuntimeMetadataContainer(scaleDecoder: decoder)
+            let runtimeMetadata: RuntimeMetadataProtocol
+            
+            // catalog
+            let commonTypesUrl = Bundle.main.url(forResource: "runtime-default", withExtension: "json")!
+            let commonTypes = try Data(contentsOf: commonTypesUrl)
+
+            let chainTypeUrl = Bundle.main.url(forResource: "runtime-peaq", withExtension: "json")!
+            let chainTypes = try Data(contentsOf: chainTypeUrl)
+
+            let catalog: TypeRegistryCatalog
+            
+            switch runtimeMetadataContainer.runtimeMetadata {
+            case let .v13(metadata):
+                catalog = try TypeRegistryCatalog.createFromTypeDefinition(
+                    commonTypes,
+                    versioningData: chainTypes,
+                    runtimeMetadata: metadata
+                )
+                runtimeMetadata = metadata
+            case let .v14(metadata):
+                catalog = try TypeRegistryCatalog.createFromSiDefinition(
+                    versioningData: chainTypes,
+                    runtimeMetadata: metadata,
+                    customTypeMapper: SiDataTypeMapper(),
+                    customNameMapper: ScaleInfoCamelCaseMapper()
+                )
+                runtimeMetadata = metadata
+            }
+            
+            return (runtimeVersion, runtimeMetadata, catalog)
+        } catch {
+            throw error
+        }
     }
 }

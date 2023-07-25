@@ -19,6 +19,14 @@
 		226F818D2A5664E400D5C4F1 /* Brainstem_substrateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F818C2A5664E400D5C4F1 /* Brainstem_substrateTests.swift */; };
 		226F81972A5664E400D5C4F1 /* Brainstem_substrateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F81962A5664E400D5C4F1 /* Brainstem_substrateUITests.swift */; };
 		226F81992A5664E400D5C4F1 /* Brainstem_substrateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F81982A5664E400D5C4F1 /* Brainstem_substrateUITestsLaunchTests.swift */; };
+		229865AA2A701E90002029BA /* StorageCodingPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865A92A701E90002029BA /* StorageCodingPath.swift */; };
+		229865AC2A701ED6002029BA /* StorageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865AB2A701ED6002029BA /* StorageResponse.swift */; };
+		229865AE2A701F0E002029BA /* Decimal+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865AD2A701F0E002029BA /* Decimal+String.swift */; };
+		229865B02A702130002029BA /* RuntimeVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865AF2A702130002029BA /* RuntimeVersion.swift */; };
+		229865B22A702147002029BA /* AssetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865B12A702147002029BA /* AssetModel.swift */; };
+		229865B42A7021E6002029BA /* SiDataTypeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865B32A7021E6002029BA /* SiDataTypeMapper.swift */; };
+		229865B82A702280002029BA /* runtime-default.json in Resources */ = {isa = PBXBuildFile; fileRef = 229865B62A702280002029BA /* runtime-default.json */; };
+		229865B92A702280002029BA /* runtime-peaq.json in Resources */ = {isa = PBXBuildFile; fileRef = 229865B72A702280002029BA /* runtime-peaq.json */; };
 		22D6B48D2A656C92004CA3C8 /* SS58FactoryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6B48C2A656C92004CA3C8 /* SS58FactoryExtensions.swift */; };
 		22D6B48F2A656CE3004CA3C8 /* SNAddressType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6B48E2A656CE3004CA3C8 /* SNAddressType.swift */; };
 		22D6B4912A656D10004CA3C8 /* SubstrateAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6B4902A656D10004CA3C8 /* SubstrateAlias.swift */; };
@@ -65,6 +73,14 @@
 		226F81922A5664E400D5C4F1 /* Brainstem-substrateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brainstem-substrateUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		226F81962A5664E400D5C4F1 /* Brainstem_substrateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brainstem_substrateUITests.swift; sourceTree = "<group>"; };
 		226F81982A5664E400D5C4F1 /* Brainstem_substrateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brainstem_substrateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		229865A92A701E90002029BA /* StorageCodingPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageCodingPath.swift; sourceTree = "<group>"; };
+		229865AB2A701ED6002029BA /* StorageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageResponse.swift; sourceTree = "<group>"; };
+		229865AD2A701F0E002029BA /* Decimal+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+String.swift"; sourceTree = "<group>"; };
+		229865AF2A702130002029BA /* RuntimeVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeVersion.swift; sourceTree = "<group>"; };
+		229865B12A702147002029BA /* AssetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModel.swift; sourceTree = "<group>"; };
+		229865B32A7021E6002029BA /* SiDataTypeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiDataTypeMapper.swift; sourceTree = "<group>"; };
+		229865B62A702280002029BA /* runtime-default.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "runtime-default.json"; sourceTree = "<group>"; };
+		229865B72A702280002029BA /* runtime-peaq.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "runtime-peaq.json"; sourceTree = "<group>"; };
 		22D6B48C2A656C92004CA3C8 /* SS58FactoryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SS58FactoryExtensions.swift; sourceTree = "<group>"; };
 		22D6B48E2A656CE3004CA3C8 /* SNAddressType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNAddressType.swift; sourceTree = "<group>"; };
 		22D6B4902A656D10004CA3C8 /* SubstrateAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstrateAlias.swift; sourceTree = "<group>"; };
@@ -136,20 +152,18 @@
 		226F81712A5664E200D5C4F1 /* Brainstem-substrate */ = {
 			isa = PBXGroup;
 			children = (
+				229865B52A702244002029BA /* Resources */,
 				22D6B48B2A656C80004CA3C8 /* Utils */,
 				226F81722A5664E200D5C4F1 /* AppDelegate.swift */,
 				226F81742A5664E200D5C4F1 /* SceneDelegate.swift */,
 				22F3E28E2A56668900D9954C /* MainViewController.swift */,
 				22657E292A67DFEE007E9944 /* MainViewController+CreateWallet.swift */,
-				22FFE0F32A61BE3B00AE0B13 /* StorageUpdate.swift */,
-				22FFE0F12A61BD8900AE0B13 /* StorageQuery.swift */,
+				22657E2B2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift */,
 				226F81782A5664E200D5C4F1 /* Main.storyboard */,
 				226F817E2A5664E400D5C4F1 /* Assets.xcassets */,
 				226F81802A5664E400D5C4F1 /* LaunchScreen.storyboard */,
 				226F81832A5664E400D5C4F1 /* Info.plist */,
 				226F817B2A5664E200D5C4F1 /* Brainstem_substrate.xcdatamodeld */,
-				22FFE0952A618A3300AE0B13 /* AccountInfo.swift */,
-				22657E2B2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift */,
 			);
 			path = "Brainstem-substrate";
 			sourceTree = "<group>";
@@ -171,13 +185,31 @@
 			path = "Brainstem-substrateUITests";
 			sourceTree = "<group>";
 		};
+		229865B52A702244002029BA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				229865B62A702280002029BA /* runtime-default.json */,
+				229865B72A702280002029BA /* runtime-peaq.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		22D6B48B2A656C80004CA3C8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				22FFE0F12A61BD8900AE0B13 /* StorageQuery.swift */,
+				22FFE0F32A61BE3B00AE0B13 /* StorageUpdate.swift */,
+				22FFE0952A618A3300AE0B13 /* AccountInfo.swift */,
 				22D6B48C2A656C92004CA3C8 /* SS58FactoryExtensions.swift */,
 				22D6B48E2A656CE3004CA3C8 /* SNAddressType.swift */,
 				22D6B4902A656D10004CA3C8 /* SubstrateAlias.swift */,
 				22D6B4922A656D67004CA3C8 /* JSONRPCAliases.swift */,
+				229865A92A701E90002029BA /* StorageCodingPath.swift */,
+				229865AB2A701ED6002029BA /* StorageResponse.swift */,
+				229865AD2A701F0E002029BA /* Decimal+String.swift */,
+				229865AF2A702130002029BA /* RuntimeVersion.swift */,
+				229865B12A702147002029BA /* AssetModel.swift */,
+				229865B32A7021E6002029BA /* SiDataTypeMapper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -314,8 +346,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				229865B92A702280002029BA /* runtime-peaq.json in Resources */,
 				226F81822A5664E400D5C4F1 /* LaunchScreen.storyboard in Resources */,
 				226F817F2A5664E400D5C4F1 /* Assets.xcassets in Resources */,
+				229865B82A702280002029BA /* runtime-default.json in Resources */,
 				226F817A2A5664E200D5C4F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,7 +478,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				229865AE2A701F0E002029BA /* Decimal+String.swift in Sources */,
 				22657E2C2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift in Sources */,
+				229865AC2A701ED6002029BA /* StorageResponse.swift in Sources */,
 				226F81732A5664E200D5C4F1 /* AppDelegate.swift in Sources */,
 				226F817D2A5664E200D5C4F1 /* Brainstem_substrate.xcdatamodeld in Sources */,
 				226F81752A5664E200D5C4F1 /* SceneDelegate.swift in Sources */,
@@ -452,10 +488,14 @@
 				22D6B48D2A656C92004CA3C8 /* SS58FactoryExtensions.swift in Sources */,
 				22FFE0F22A61BD8900AE0B13 /* StorageQuery.swift in Sources */,
 				22D6B48F2A656CE3004CA3C8 /* SNAddressType.swift in Sources */,
+				229865B42A7021E6002029BA /* SiDataTypeMapper.swift in Sources */,
 				22D6B4932A656D67004CA3C8 /* JSONRPCAliases.swift in Sources */,
+				229865B02A702130002029BA /* RuntimeVersion.swift in Sources */,
 				22FFE0962A618A3300AE0B13 /* AccountInfo.swift in Sources */,
 				22D6B4912A656D10004CA3C8 /* SubstrateAlias.swift in Sources */,
 				22FFE0F42A61BE3B00AE0B13 /* StorageUpdate.swift in Sources */,
+				229865AA2A701E90002029BA /* StorageCodingPath.swift in Sources */,
+				229865B22A702147002029BA /* AssetModel.swift in Sources */,
 				22657E2A2A67DFEE007E9944 /* MainViewController+CreateWallet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

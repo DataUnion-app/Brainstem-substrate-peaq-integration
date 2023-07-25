@@ -6,77 +6,149 @@ import BigInt
 extension MainViewController {
     func connectPeaqNetwork() {
         // display account balance
-        getAccountBalance()
+        do {
+            let availableBalance = try getAccountBalance()
+            balanceLabel.text = "Balance: \(availableBalance)"
+        } catch {
+            errorLabel.text = error.localizedDescription
+        }
     }
 
-    func getAccountBalance() {
-        let addressFactory = SS58AddressFactory()
-        let accountId = try! addressFactory.accountId(from: test_address)
-
-        let operationQueue = OperationQueue()
-
-        let hasher: StorageHasher = StorageHasher.blake128Concat
-        
-        let keyParams = [accountId]
-        
-        let remoteFactory = StorageKeyFactory()
-        
+    func getAccountBalance() throws -> String {
         do {
+            let addressFactory = SS58AddressFactory()
+            let accountId = try! addressFactory.accountId(from: test_address)
+            let keyParams = [accountId]
+
+            let path = StorageCodingPath.account
+            guard let entry = runtimeMetadata!.getStorageMetadata(
+                in: path.moduleName,
+                storageName: path.itemName
+            ) else {
+                throw NSError(domain: "Invalid storage path", code: 0)
+            }
+        
+            let keyType: String
+            let hasher: StorageHasher
+        
+            switch entry.type {
+            case let .map(mapEntry):
+                keyType = mapEntry.key
+                hasher = mapEntry.hasher
+            case let .doubleMap(doubleMapEntry):
+                keyType = doubleMapEntry.key1
+                hasher = doubleMapEntry.hasher
+            case let .nMap(nMapEntry):
+                guard
+                    let firstKey = nMapEntry.keyVec.first,
+                    let firstHasher = nMapEntry.hashers.first else {
+                    throw NSError(domain: "Missing required params", code: 0)
+                }
+
+                keyType = firstKey
+                hasher = firstHasher
+            case .plain:
+                throw NSError(domain: "Incompatible storage type", code: 0)
+            }
+        
             let keys: [Data] = try keyParams.map { keyParam in
-                let encoder = ScaleEncoder()
-                
-                encoder.appendRaw(data: keyParam)
-                let keyParamData = encoder.encode()
-                
-                return try remoteFactory.createStorageKey(
-                    moduleName: "System",
-                    storageName: "Account",
-                    key: keyParamData,
+                let encoder = DynamicScaleEncoder(registry: catalog!, version: UInt64(runtimeVersion!.specVersion))
+                try encoder.append(keyParam, ofType: keyType)
+
+                let encodedParam = try encoder.encode()
+
+                return try StorageKeyFactory().createStorageKey(
+                    moduleName: path.moduleName,
+                    storageName: path.itemName,
+                    key: encodedParam,
                     hasher: hasher
                 )
             }
             
             let params = StorageQuery(keys: keys, blockHash: nil)
 
-            let operation = JSONRPCQueryOperation(engine: engine!,
-                                                                 method: RPCMethod.queryStorageAt,
-                                                                 parameters: params)
+            let queryOperation = JSONRPCQueryOperation(
+                engine: engine!,
+                method: RPCMethod.queryStorageAt,
+                parameters: params,
+                timeout: 60
+            )
 
-            operationQueue.addOperations([operation], waitUntilFinished: true)
+            OperationQueue().addOperations([queryOperation], waitUntilFinished: true)
 
-            let result = try operation.extractResultData(throwing: BaseOperationError.parentOperationCancelled).flatMap { $0 }
+            let result = try queryOperation.extractNoCancellableResultData().flatMap { $0 }
             
             let dataList = result
                 .flatMap { StorageUpdateData(update: $0).changes }
                 .map(\.value)
             
-            if let data = dataList[0] {
-                let decoder = try ScaleDecoder(data: data)
-                
-                // ["nonce", "consumers", "providers", "sufficients", "data"]
-                // ["free", "reserved", "miscFrozen", "feeFrozen"]
-                
-                let typeArray = [["nonce": 4], ["consumers" : 4], ["providers": 4], ["sufficients": 4], ["free": 16], ["reserved": 16], ["miscFrozen": 16], ["feeFrozen": 16]]
+            let resultChangesData = result.flatMap { StorageUpdateData(update: $0).changes }
+            
+            let keyedEncodedItems = resultChangesData.reduce(into: [Data: Data]()) { result, change in
+                if let data = change.value {
+                    result[change.key] = data
+                }
+            }
+            
+            let allKeys = resultChangesData.map(\.key)
+            
+            let items: [AccountInfo?] = try dataList.map { data in
+                guard let entry = runtimeMetadata!.getStorageMetadata(
+                    in: path.moduleName,
+                    storageName: path.itemName
+                ) else {
+                    throw NSError(domain: "Invalid storage path", code: 0)
+                }
 
-                let resultArray = try typeArray.reduce(into: [BigUInt]()) { (result, type) in
-                    if let value = type.values.first {
-                        let info = try decoder.readAndConfirm(count: value)
-                        result.append(BigUInt(Data(info.reversed())))
+                if let data = data {
+                    let decoder = try DynamicScaleDecoder(data: data, registry: catalog!, version: UInt64(runtimeVersion!.specVersion))
+                    return try decoder.read(type: entry.type.typeName).map(to: AccountInfo.self)
+                } else {
+                    switch entry.modifier {
+                    case .defaultModifier:
+                        let decoder = try DynamicScaleDecoder(data: entry.defaultValue, registry: catalog!, version: UInt64(runtimeVersion!.specVersion))
+                        return try decoder.read(type: entry.type.typeName).map(to: AccountInfo.self)
+                    case .optional:
+                        return nil
                     }
                 }
-                
-                print("nonce, consumers, providers, sufficients:", resultArray[0], resultArray[1], resultArray[2], resultArray[3])
-                print("free, reserved, miscFrozen, feeFrozen:", resultArray[4], resultArray[5], resultArray[6], resultArray[7])
-                
-                let balanceString = Decimal.fromSubstrateAmount(
-                    resultArray[4] - max(resultArray[6], resultArray[7]), //free - max(miscFrozen, feeFrozen)
-                    precision: 18
-                ) ?? 0.0
-                
-                balanceLabel.text = "Balance: \(balanceString) AGNG"
             }
+            
+            let keyedItems = zip(allKeys, items).reduce(into: [Data: AccountInfo]()) { result, item in
+                result[item.0] = item.1
+            }
+            
+            let originalIndexedKeys = keys.enumerated().reduce(into: [Data: Int]()) { result, item in
+                result[item.element] = item.offset
+            }
+            
+            let responseAll = allKeys.map { key in
+                StorageResponse(key: key, data: keyedEncodedItems[key], value: keyedItems[key])
+            }.sorted { response1, response2 in
+                guard
+                    let index1 = originalIndexedKeys[response1.key],
+                    let index2 = originalIndexedKeys[response2.key] else {
+                    return false
+                }
+
+                return index1 < index2
+            }
+            
+            guard let response = responseAll.first else {
+                throw BaseOperationError.unexpectedDependentResult
+            }
+
+            let accountInfo = response.value
+            let available = accountInfo.map {
+                Decimal.fromSubstrateAmount(
+                    $0.data.available,
+                    precision: liveOrTest ? Int16(assetModelPeaqLive!.precision) : Int16(assetModelPeaqTest!.precision)
+                ) ?? 0.0
+            } ?? 0.0
+
+            return available.stringWithPointSeparator + " \(liveOrTest ? assetModelPeaqLive!.symbol : assetModelPeaqTest!.symbol)"
         } catch {
-            errorLabel.text = error.localizedDescription
+            throw error
         }
     }
 }
