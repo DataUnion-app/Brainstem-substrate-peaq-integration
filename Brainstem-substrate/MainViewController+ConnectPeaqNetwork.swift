@@ -93,7 +93,13 @@ extension MainViewController {
                 let decoder = try DynamicScaleDecoder(data: data!, registry: catalog!, version: UInt64(runtimeVersion!.specVersion))
                 return try decoder.read(type: entry.type.typeName).map(to: AccountInfo.self)
             } else {
-                return nil
+                switch entry.modifier {
+                case .defaultModifier:
+                    let decoder = try DynamicScaleDecoder(data: entry.defaultValue, registry: catalog!, version: UInt64(runtimeVersion!.specVersion))
+                    return try decoder.read(type: entry.type.typeName).map(to: AccountInfo.self)
+                case .optional:
+                    return nil
+                }
             }
         } catch {
             throw error
