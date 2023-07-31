@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A8638454F55CD2C2FC35D9B /* Pods_Brainstem_substrate_Brainstem_substrateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2796CFEA048F9E23028057 /* Pods_Brainstem_substrate_Brainstem_substrateUITests.framework */; };
+		225882002A72570400DC67C8 /* ExtrinsicStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225881FF2A72570400DC67C8 /* ExtrinsicStatus.swift */; };
 		22657E2A2A67DFEE007E9944 /* MainViewController+CreateWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22657E292A67DFEE007E9944 /* MainViewController+CreateWallet.swift */; };
 		22657E2C2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22657E2B2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift */; };
 		226F81732A5664E200D5C4F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F81722A5664E200D5C4F1 /* AppDelegate.swift */; };
@@ -19,6 +20,8 @@
 		226F818D2A5664E400D5C4F1 /* Brainstem_substrateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F818C2A5664E400D5C4F1 /* Brainstem_substrateTests.swift */; };
 		226F81972A5664E400D5C4F1 /* Brainstem_substrateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F81962A5664E400D5C4F1 /* Brainstem_substrateUITests.swift */; };
 		226F81992A5664E400D5C4F1 /* Brainstem_substrateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F81982A5664E400D5C4F1 /* Brainstem_substrateUITestsLaunchTests.swift */; };
+		2280C85A2A70D21000DEB0E5 /* DidInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280C8592A70D21000DEB0E5 /* DidInfo.swift */; };
+		2280C85C2A714F6600DEB0E5 /* SystemProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280C85B2A714F6600DEB0E5 /* SystemProperties.swift */; };
 		229865AA2A701E90002029BA /* StorageCodingPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865A92A701E90002029BA /* StorageCodingPath.swift */; };
 		229865AC2A701ED6002029BA /* StorageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865AB2A701ED6002029BA /* StorageResponse.swift */; };
 		229865AE2A701F0E002029BA /* Decimal+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865AD2A701F0E002029BA /* Decimal+String.swift */; };
@@ -27,6 +30,12 @@
 		229865B42A7021E6002029BA /* SiDataTypeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865B32A7021E6002029BA /* SiDataTypeMapper.swift */; };
 		229865B82A702280002029BA /* runtime-default.json in Resources */ = {isa = PBXBuildFile; fileRef = 229865B62A702280002029BA /* runtime-default.json */; };
 		229865B92A702280002029BA /* runtime-peaq.json in Resources */ = {isa = PBXBuildFile; fileRef = 229865B72A702280002029BA /* runtime-peaq.json */; };
+		229865BB2A7025F8002029BA /* MainViewController+PeaqDid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865BA2A7025F8002029BA /* MainViewController+PeaqDid.swift */; };
+		229865BD2A702624002029BA /* ConstantCodingPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865BC2A702624002029BA /* ConstantCodingPath.swift */; };
+		229865BF2A70264F002029BA /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865BE2A70264F002029BA /* Block.swift */; };
+		229865C12A702682002029BA /* BigUInt+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865C02A702682002029BA /* BigUInt+Hex.swift */; };
+		229865C32A7026BE002029BA /* GenerateDidCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865C22A7026BE002029BA /* GenerateDidCall.swift */; };
+		22B94AC22A752566006B5D78 /* MainViewController+CoreApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B94AC12A752566006B5D78 /* MainViewController+CoreApiCalls.swift */; };
 		22D6B48D2A656C92004CA3C8 /* SS58FactoryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6B48C2A656C92004CA3C8 /* SS58FactoryExtensions.swift */; };
 		22D6B48F2A656CE3004CA3C8 /* SNAddressType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6B48E2A656CE3004CA3C8 /* SNAddressType.swift */; };
 		22D6B4912A656D10004CA3C8 /* SubstrateAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6B4902A656D10004CA3C8 /* SubstrateAlias.swift */; };
@@ -58,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		059F4A703B16C0A2E5EF51EC /* Pods_Brainstem_substrate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brainstem_substrate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		225881FF2A72570400DC67C8 /* ExtrinsicStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtrinsicStatus.swift; sourceTree = "<group>"; };
 		22657E292A67DFEE007E9944 /* MainViewController+CreateWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+CreateWallet.swift"; sourceTree = "<group>"; };
 		22657E2B2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+ConnectPeaqNetwork.swift"; sourceTree = "<group>"; };
 		226F816F2A5664E200D5C4F1 /* Brainstem-substrate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brainstem-substrate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +83,8 @@
 		226F81922A5664E400D5C4F1 /* Brainstem-substrateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brainstem-substrateUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		226F81962A5664E400D5C4F1 /* Brainstem_substrateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brainstem_substrateUITests.swift; sourceTree = "<group>"; };
 		226F81982A5664E400D5C4F1 /* Brainstem_substrateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brainstem_substrateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2280C8592A70D21000DEB0E5 /* DidInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidInfo.swift; sourceTree = "<group>"; };
+		2280C85B2A714F6600DEB0E5 /* SystemProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemProperties.swift; sourceTree = "<group>"; };
 		229865A92A701E90002029BA /* StorageCodingPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageCodingPath.swift; sourceTree = "<group>"; };
 		229865AB2A701ED6002029BA /* StorageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageResponse.swift; sourceTree = "<group>"; };
 		229865AD2A701F0E002029BA /* Decimal+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+String.swift"; sourceTree = "<group>"; };
@@ -81,6 +93,12 @@
 		229865B32A7021E6002029BA /* SiDataTypeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiDataTypeMapper.swift; sourceTree = "<group>"; };
 		229865B62A702280002029BA /* runtime-default.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "runtime-default.json"; sourceTree = "<group>"; };
 		229865B72A702280002029BA /* runtime-peaq.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "runtime-peaq.json"; sourceTree = "<group>"; };
+		229865BA2A7025F8002029BA /* MainViewController+PeaqDid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+PeaqDid.swift"; sourceTree = "<group>"; };
+		229865BC2A702624002029BA /* ConstantCodingPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantCodingPath.swift; sourceTree = "<group>"; };
+		229865BE2A70264F002029BA /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		229865C02A702682002029BA /* BigUInt+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BigUInt+Hex.swift"; sourceTree = "<group>"; };
+		229865C22A7026BE002029BA /* GenerateDidCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateDidCall.swift; sourceTree = "<group>"; };
+		22B94AC12A752566006B5D78 /* MainViewController+CoreApiCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+CoreApiCalls.swift"; sourceTree = "<group>"; };
 		22D6B48C2A656C92004CA3C8 /* SS58FactoryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SS58FactoryExtensions.swift; sourceTree = "<group>"; };
 		22D6B48E2A656CE3004CA3C8 /* SNAddressType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNAddressType.swift; sourceTree = "<group>"; };
 		22D6B4902A656D10004CA3C8 /* SubstrateAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstrateAlias.swift; sourceTree = "<group>"; };
@@ -152,6 +170,7 @@
 		226F81712A5664E200D5C4F1 /* Brainstem-substrate */ = {
 			isa = PBXGroup;
 			children = (
+				2280C8582A70D17500DEB0E5 /* Custom */,
 				229865B52A702244002029BA /* Resources */,
 				22D6B48B2A656C80004CA3C8 /* Utils */,
 				226F81722A5664E200D5C4F1 /* AppDelegate.swift */,
@@ -159,6 +178,8 @@
 				22F3E28E2A56668900D9954C /* MainViewController.swift */,
 				22657E292A67DFEE007E9944 /* MainViewController+CreateWallet.swift */,
 				22657E2B2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift */,
+				229865BA2A7025F8002029BA /* MainViewController+PeaqDid.swift */,
+				22B94AC12A752566006B5D78 /* MainViewController+CoreApiCalls.swift */,
 				226F81782A5664E200D5C4F1 /* Main.storyboard */,
 				226F817E2A5664E400D5C4F1 /* Assets.xcassets */,
 				226F81802A5664E400D5C4F1 /* LaunchScreen.storyboard */,
@@ -185,6 +206,19 @@
 			path = "Brainstem-substrateUITests";
 			sourceTree = "<group>";
 		};
+		2280C8582A70D17500DEB0E5 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				229865C22A7026BE002029BA /* GenerateDidCall.swift */,
+				229865A92A701E90002029BA /* StorageCodingPath.swift */,
+				22D6B4902A656D10004CA3C8 /* SubstrateAlias.swift */,
+				22D6B4922A656D67004CA3C8 /* JSONRPCAliases.swift */,
+				2280C8592A70D21000DEB0E5 /* DidInfo.swift */,
+				2280C85B2A714F6600DEB0E5 /* SystemProperties.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 		229865B52A702244002029BA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,14 +236,15 @@
 				22FFE0952A618A3300AE0B13 /* AccountInfo.swift */,
 				22D6B48C2A656C92004CA3C8 /* SS58FactoryExtensions.swift */,
 				22D6B48E2A656CE3004CA3C8 /* SNAddressType.swift */,
-				22D6B4902A656D10004CA3C8 /* SubstrateAlias.swift */,
-				22D6B4922A656D67004CA3C8 /* JSONRPCAliases.swift */,
-				229865A92A701E90002029BA /* StorageCodingPath.swift */,
 				229865AB2A701ED6002029BA /* StorageResponse.swift */,
 				229865AD2A701F0E002029BA /* Decimal+String.swift */,
 				229865AF2A702130002029BA /* RuntimeVersion.swift */,
 				229865B12A702147002029BA /* AssetModel.swift */,
 				229865B32A7021E6002029BA /* SiDataTypeMapper.swift */,
+				229865BC2A702624002029BA /* ConstantCodingPath.swift */,
+				229865BE2A70264F002029BA /* Block.swift */,
+				229865C02A702682002029BA /* BigUInt+Hex.swift */,
+				225881FF2A72570400DC67C8 /* ExtrinsicStatus.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -479,19 +514,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				229865AE2A701F0E002029BA /* Decimal+String.swift in Sources */,
+				229865BF2A70264F002029BA /* Block.swift in Sources */,
 				22657E2C2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift in Sources */,
 				229865AC2A701ED6002029BA /* StorageResponse.swift in Sources */,
 				226F81732A5664E200D5C4F1 /* AppDelegate.swift in Sources */,
 				226F817D2A5664E200D5C4F1 /* Brainstem_substrate.xcdatamodeld in Sources */,
 				226F81752A5664E200D5C4F1 /* SceneDelegate.swift in Sources */,
 				22F3E28F2A56668900D9954C /* MainViewController.swift in Sources */,
+				229865C32A7026BE002029BA /* GenerateDidCall.swift in Sources */,
+				22B94AC22A752566006B5D78 /* MainViewController+CoreApiCalls.swift in Sources */,
 				22D6B48D2A656C92004CA3C8 /* SS58FactoryExtensions.swift in Sources */,
+				229865C12A702682002029BA /* BigUInt+Hex.swift in Sources */,
+				2280C85C2A714F6600DEB0E5 /* SystemProperties.swift in Sources */,
+				225882002A72570400DC67C8 /* ExtrinsicStatus.swift in Sources */,
+				229865BB2A7025F8002029BA /* MainViewController+PeaqDid.swift in Sources */,
 				22FFE0F22A61BD8900AE0B13 /* StorageQuery.swift in Sources */,
 				22D6B48F2A656CE3004CA3C8 /* SNAddressType.swift in Sources */,
+				229865BD2A702624002029BA /* ConstantCodingPath.swift in Sources */,
 				229865B42A7021E6002029BA /* SiDataTypeMapper.swift in Sources */,
 				22D6B4932A656D67004CA3C8 /* JSONRPCAliases.swift in Sources */,
 				229865B02A702130002029BA /* RuntimeVersion.swift in Sources */,
 				22FFE0962A618A3300AE0B13 /* AccountInfo.swift in Sources */,
+				2280C85A2A70D21000DEB0E5 /* DidInfo.swift in Sources */,
 				22D6B4912A656D10004CA3C8 /* SubstrateAlias.swift in Sources */,
 				22FFE0F42A61BE3B00AE0B13 /* StorageUpdate.swift in Sources */,
 				229865AA2A701E90002029BA /* StorageCodingPath.swift in Sources */,
