@@ -142,6 +142,48 @@ class MainViewController: UIViewController {
             resultLabel.text = "Extrinsic Hash: " + extrinsicHash
             self.extrinsicHash = extrinsicHash
             print("Hash:", extrinsicHash)
+
+            Task {
+                do {
+                    var result = try await refreshTokenAPI()
+                    if let access_token = result["access_token"] as? String {
+                        self.accessToken = access_token
+                        print("access_token", access_token)
+                    }
+
+                    let parameters: [String: Any] = [
+//                        "image_id": access_token,
+                        "annotations": [
+//                            [
+//                                "x": 1.0,
+//                                "y": 1.0,
+//                                "width": 34.0,
+//                                "height": 23.2,
+//                                "type": "box",
+//                                "tag": "sample"
+//                            ],
+//                            [
+//                                "skin_color": "Brown",
+//                                "gender": "Male",
+//                                "type": "anonymization",
+//                                "age": 25
+//                            ],
+                            [
+//                                "type": "dots",
+                                "tag": "DID1234"
+//                                "dots": [
+//                                    ["x": 1, "y": 1, "height": 1, "width": 1]
+//                                ]
+                            ]
+                        ]
+                    ]
+                    
+                    result = try await postUserData(with: annotation_url, parameters: parameters)
+                    print("result", result)
+                } catch {
+                    print("error", error)
+                }
+            }
         case let .failure(error):
             errorLabel.text = error.localizedDescription
         }

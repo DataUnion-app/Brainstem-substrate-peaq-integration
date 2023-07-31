@@ -299,6 +299,65 @@ extension MainViewController {
         }
     }
 
+    func refreshTokenAPI() async throws -> [String: Any] {
+        guard let url = URL(string: self.refresh_url) else {
+            throw NSError(domain: "Invalid URL", code: 0, userInfo: nil)
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(self.refreshToken!)", forHTTPHeaderField: "Authorization")
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+        print("data:", data.toHex())
+        print("response:", response)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw NSError(domain: "HTTP error", code: 0, userInfo: nil)
+        }
+
+        guard let result = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+            throw NSError(domain: "Invalid JSON", code: 0, userInfo: nil)
+        }
+
+        if ((200...299) + [400, 401]).contains(httpResponse.statusCode) {
+            return result
+        } else {
+            throw NSError(domain: "HTTP error", code: httpResponse.statusCode, userInfo: nil)
+        }
+    }
+
+    func postUserData(with url: String, parameters: [String: Any]) async throws -> [String: Any] {
+        guard let url = URL(string: url) else {
+            throw NSError(domain: "Invalid URL", code: 0, userInfo: nil)
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(self.accessToken!)", forHTTPHeaderField: "Authorization")
+
+        let jsonData = try JSONSerialization.data(withJSONObject: parameters, options: [])
+        request.httpBody = jsonData
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw NSError(domain: "HTTP error", code: 0, userInfo: nil)
+        }
+
+        guard let result = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+            throw NSError(domain: "Invalid JSON", code: 0, userInfo: nil)
+        }
+
+        if ((200...299) + [400, 401]).contains(httpResponse.statusCode) {
+            return result
+        } else {
+            throw NSError(domain: "HTTP error", code: httpResponse.statusCode, userInfo: nil)
+        }
+    }
+
     func postData(with url: String, parameters: [String: Any]) async throws -> [String: Any] {
         guard let url = URL(string: url) else {
             throw NSError(domain: "Invalid URL", code: 0, userInfo: nil)
