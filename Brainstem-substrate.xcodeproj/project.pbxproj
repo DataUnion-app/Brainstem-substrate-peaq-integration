@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A8638454F55CD2C2FC35D9B /* Pods_Brainstem_substrate_Brainstem_substrateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2796CFEA048F9E23028057 /* Pods_Brainstem_substrate_Brainstem_substrateUITests.framework */; };
+		2229B2352A7E1FCB0047FB10 /* HBR_RR_2021-09-01_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2229B2342A7E1FCB0047FB10 /* HBR_RR_2021-09-01_1.txt */; };
 		225882002A72570400DC67C8 /* ExtrinsicStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225881FF2A72570400DC67C8 /* ExtrinsicStatus.swift */; };
 		22657E2A2A67DFEE007E9944 /* MainViewController+CreateWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22657E292A67DFEE007E9944 /* MainViewController+CreateWallet.swift */; };
 		22657E2C2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22657E2B2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		059F4A703B16C0A2E5EF51EC /* Pods_Brainstem_substrate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brainstem_substrate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2229B2342A7E1FCB0047FB10 /* HBR_RR_2021-09-01_1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HBR_RR_2021-09-01_1.txt"; sourceTree = "<group>"; };
 		225881FF2A72570400DC67C8 /* ExtrinsicStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtrinsicStatus.swift; sourceTree = "<group>"; };
 		22657E292A67DFEE007E9944 /* MainViewController+CreateWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+CreateWallet.swift"; sourceTree = "<group>"; };
 		22657E2B2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+ConnectPeaqNetwork.swift"; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 		229865B52A702244002029BA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2229B2342A7E1FCB0047FB10 /* HBR_RR_2021-09-01_1.txt */,
 				229865B62A702280002029BA /* runtime-default.json */,
 				229865B72A702280002029BA /* runtime-peaq.json */,
 			);
@@ -385,6 +388,7 @@
 				226F81822A5664E400D5C4F1 /* LaunchScreen.storyboard in Resources */,
 				226F817F2A5664E400D5C4F1 /* Assets.xcassets in Resources */,
 				229865B82A702280002029BA /* runtime-default.json in Resources */,
+				2229B2352A7E1FCB0047FB10 /* HBR_RR_2021-09-01_1.txt in Resources */,
 				226F817A2A5664E200D5C4F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

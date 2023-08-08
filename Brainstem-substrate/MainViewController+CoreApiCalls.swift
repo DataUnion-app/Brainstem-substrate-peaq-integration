@@ -299,6 +299,57 @@ extension MainViewController {
         }
     }
 
+    func uploadFile(requestURL: String, fileURL: URL, fileType: String) async throws -> [String: Any]  {
+        // Prepare the request
+        var request = URLRequest(url: URL(string: requestURL)!)
+        request.httpMethod = "POST"
+        
+        // Set the Authorization header
+        request.addValue("Bearer \(self.accessToken!)", forHTTPHeaderField: "Authorization")
+        
+        // Prepare the file data to be uploaded
+        do {
+            let fileData = try Data(contentsOf: fileURL)
+            
+            // Set the file data and file type as form data
+            let boundary = "Boundary-\(UUID().uuidString)"
+            request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+            
+            var data = Data()
+            data.append("--\(boundary)\r\n".data(using: .utf8)!)
+            data.append("Content-Disposition: form-data; name=\"file-type\"\r\n\r\n".data(using: .utf8)!)
+            data.append("\(fileType)\r\n".data(using: .utf8)!)
+            
+            data.append("--\(boundary)\r\n".data(using: .utf8)!)
+            data.append("Content-Disposition: form-data; name=\"file\"; filename=\"\(fileURL.lastPathComponent)\"\r\n".data(using: .utf8)!)
+            data.append("Content-Type: application/octet-stream\r\n\r\n".data(using: .utf8)!)
+            data.append(fileData)
+            data.append("\r\n".data(using: .utf8)!)
+            data.append("--\(boundary)--\r\n".data(using: .utf8)!)
+            
+            request.httpBody = data
+            
+            // Send the request using URLSession
+            let (result, response) = try await URLSession.shared.upload(for: request, from: data)
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                throw NSError(domain: "HTTP error", code: 0, userInfo: nil)
+            }
+
+            guard let resultJson = try JSONSerialization.jsonObject(with: result, options: []) as? [String: Any] else {
+                throw NSError(domain: "Invalid JSON", code: 0, userInfo: nil)
+            }
+
+            if ((200...299) + [400, 401]).contains(httpResponse.statusCode) {
+                return resultJson
+            } else {
+                throw NSError(domain: "HTTP error", code: httpResponse.statusCode, userInfo: nil)
+            }
+        } catch {
+            throw error
+        }
+    }
+
     func refreshTokenAPI() async throws -> [String: Any] {
         guard let url = URL(string: self.refresh_url) else {
             throw NSError(domain: "Invalid URL", code: 0, userInfo: nil)

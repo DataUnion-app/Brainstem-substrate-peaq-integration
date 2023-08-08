@@ -42,6 +42,7 @@ class MainViewController: UIViewController {
     var get_nonce_url = "/get-nonce?public_address=$[public_address]"
     var login_url = "/login"
     var refresh_url = "/refresh"
+    var fileupload_url = "/api/v1/upload-file"
     var annotation_url = "/api/v1/metadata/annotation"
 
     static let fallbackMaxHashCount: BlockNumber = 250
@@ -56,11 +57,12 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        register_url = dev_base_url + register_url
-        get_nonce_url = dev_base_url + get_nonce_url
-        login_url = dev_base_url + login_url
-        refresh_url = dev_base_url + refresh_url
-        annotation_url = dev_base_url + annotation_url
+        register_url = brainstem_base_url + register_url
+        get_nonce_url = brainstem_base_url + get_nonce_url
+        login_url = brainstem_base_url + login_url
+        refresh_url = brainstem_base_url + refresh_url
+        fileupload_url = brainstem_base_url + fileupload_url
+        annotation_url = brainstem_base_url + annotation_url
 
         assetModelPeaqLive = AssetModel(assetId: 0, icon: nil, name: nil, symbol: "AGNG", precision: 18, priceId: nil, staking: nil, type: nil, typeExtras: nil, buyProviders: nil)
         assetModelPeaqTest = AssetModel(assetId: 1, icon: nil, name: nil, symbol: "PEAQ", precision: 18, priceId: nil, staking: nil, type: nil, typeExtras: nil, buyProviders: nil)
@@ -151,37 +153,31 @@ class MainViewController: UIViewController {
                         print("access_token", access_token)
                     }
 
-                    let parameters: [String: Any] = [
-//                        "image_id": access_token,
-                        "annotations": [
-//                            [
-//                                "x": 1.0,
-//                                "y": 1.0,
-//                                "width": 34.0,
-//                                "height": 23.2,
-//                                "type": "box",
-//                                "tag": "sample"
-//                            ],
-//                            [
-//                                "skin_color": "Brown",
-//                                "gender": "Male",
-//                                "type": "anonymization",
-//                                "age": 25
-//                            ],
-                            [
-//                                "type": "dots",
-                                "tag": "DID1234"
-//                                "dots": [
-//                                    ["x": 1, "y": 1, "height": 1, "width": 1]
-//                                ]
+                    if let fileURL = Bundle.main.url(forResource: "HBR_RR_2021-09-01_1", withExtension: "txt") {
+                        let fileType = "heartbeat"
+                        let response = try await uploadFile(requestURL: fileupload_url, fileURL: fileURL, fileType: fileType)
+                        if let doc_id = response["id"] as? String {
+                            print("doc_id:", doc_id)
+                            let parameters: [String: Any] = [
+                                "entity_id": doc_id,
+                                "annotations": [
+                                    [
+                                        "type": "peaq_did",
+                                        "data": extrinsicHash
+                                    ]
+                                ]
                             ]
-                        ]
-                    ]
-                    
-                    result = try await postUserData(with: annotation_url, parameters: parameters)
-                    print("result", result)
+
+                            result = try await postUserData(with: annotation_url, parameters: parameters)
+                            if let status = result["status"] as? String {
+                                if status == "success" {
+                                    resultLabel.text = "Extrinsic Hash: " + extrinsicHash + "\nAnnotation success."
+                                }
+                            }
+                        }
+                    }
                 } catch {
-                    print("error", error)
+                    errorLabel.text = error.localizedDescription
                 }
             }
         case let .failure(error):
