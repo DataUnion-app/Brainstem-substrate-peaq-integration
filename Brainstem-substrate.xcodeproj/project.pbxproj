@@ -1,0 +1,908 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A8638454F55CD2C2FC35D9B /* Pods_Brainstem_substrate_Brainstem_substrateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2796CFEA048F9E23028057 /* Pods_Brainstem_substrate_Brainstem_substrateUITests.framework */; };
+		2229B2352A7E1FCB0047FB10 /* HBR_RR_2021-09-01_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2229B2342A7E1FCB0047FB10 /* HBR_RR_2021-09-01_1.txt */; };
+		225882002A72570400DC67C8 /* ExtrinsicStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225881FF2A72570400DC67C8 /* ExtrinsicStatus.swift */; };
+		22657E2A2A67DFEE007E9944 /* MainViewController+CreateWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22657E292A67DFEE007E9944 /* MainViewController+CreateWallet.swift */; };
+		22657E2C2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22657E2B2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift */; };
+		226F81732A5664E200D5C4F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F81722A5664E200D5C4F1 /* AppDelegate.swift */; };
+		226F81752A5664E200D5C4F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F81742A5664E200D5C4F1 /* SceneDelegate.swift */; };
+		226F817A2A5664E200D5C4F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226F81782A5664E200D5C4F1 /* Main.storyboard */; };
+		226F817D2A5664E200D5C4F1 /* Brainstem_substrate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 226F817B2A5664E200D5C4F1 /* Brainstem_substrate.xcdatamodeld */; };
+		226F817F2A5664E400D5C4F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 226F817E2A5664E400D5C4F1 /* Assets.xcassets */; };
+		226F81822A5664E400D5C4F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226F81802A5664E400D5C4F1 /* LaunchScreen.storyboard */; };
+		226F818D2A5664E400D5C4F1 /* Brainstem_substrateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F818C2A5664E400D5C4F1 /* Brainstem_substrateTests.swift */; };
+		226F81972A5664E400D5C4F1 /* Brainstem_substrateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F81962A5664E400D5C4F1 /* Brainstem_substrateUITests.swift */; };
+		226F81992A5664E400D5C4F1 /* Brainstem_substrateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F81982A5664E400D5C4F1 /* Brainstem_substrateUITestsLaunchTests.swift */; };
+		2280C85A2A70D21000DEB0E5 /* DidInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280C8592A70D21000DEB0E5 /* DidInfo.swift */; };
+		2280C85C2A714F6600DEB0E5 /* SystemProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280C85B2A714F6600DEB0E5 /* SystemProperties.swift */; };
+		229865AA2A701E90002029BA /* StorageCodingPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865A92A701E90002029BA /* StorageCodingPath.swift */; };
+		229865AC2A701ED6002029BA /* StorageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865AB2A701ED6002029BA /* StorageResponse.swift */; };
+		229865AE2A701F0E002029BA /* Decimal+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865AD2A701F0E002029BA /* Decimal+String.swift */; };
+		229865B02A702130002029BA /* RuntimeVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865AF2A702130002029BA /* RuntimeVersion.swift */; };
+		229865B22A702147002029BA /* AssetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865B12A702147002029BA /* AssetModel.swift */; };
+		229865B42A7021E6002029BA /* SiDataTypeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865B32A7021E6002029BA /* SiDataTypeMapper.swift */; };
+		229865B82A702280002029BA /* runtime-default.json in Resources */ = {isa = PBXBuildFile; fileRef = 229865B62A702280002029BA /* runtime-default.json */; };
+		229865B92A702280002029BA /* runtime-peaq.json in Resources */ = {isa = PBXBuildFile; fileRef = 229865B72A702280002029BA /* runtime-peaq.json */; };
+		229865BB2A7025F8002029BA /* MainViewController+PeaqDid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865BA2A7025F8002029BA /* MainViewController+PeaqDid.swift */; };
+		229865BD2A702624002029BA /* ConstantCodingPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865BC2A702624002029BA /* ConstantCodingPath.swift */; };
+		229865BF2A70264F002029BA /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865BE2A70264F002029BA /* Block.swift */; };
+		229865C12A702682002029BA /* BigUInt+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865C02A702682002029BA /* BigUInt+Hex.swift */; };
+		229865C32A7026BE002029BA /* GenerateDidCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229865C22A7026BE002029BA /* GenerateDidCall.swift */; };
+		22B94AC22A752566006B5D78 /* MainViewController+CoreApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B94AC12A752566006B5D78 /* MainViewController+CoreApiCalls.swift */; };
+		22D6B48D2A656C92004CA3C8 /* SS58FactoryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6B48C2A656C92004CA3C8 /* SS58FactoryExtensions.swift */; };
+		22D6B48F2A656CE3004CA3C8 /* SNAddressType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6B48E2A656CE3004CA3C8 /* SNAddressType.swift */; };
+		22D6B4912A656D10004CA3C8 /* SubstrateAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6B4902A656D10004CA3C8 /* SubstrateAlias.swift */; };
+		22D6B4932A656D67004CA3C8 /* JSONRPCAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6B4922A656D67004CA3C8 /* JSONRPCAliases.swift */; };
+		22F3E28F2A56668900D9954C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3E28E2A56668900D9954C /* MainViewController.swift */; };
+		22FFE0962A618A3300AE0B13 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FFE0952A618A3300AE0B13 /* AccountInfo.swift */; };
+		22FFE0F22A61BD8900AE0B13 /* StorageQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FFE0F12A61BD8900AE0B13 /* StorageQuery.swift */; };
+		22FFE0F42A61BE3B00AE0B13 /* StorageUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FFE0F32A61BE3B00AE0B13 /* StorageUpdate.swift */; };
+		4C756433B666DDBF0869D310 /* Pods_Brainstem_substrate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F4A703B16C0A2E5EF51EC /* Pods_Brainstem_substrate.framework */; };
+		75EE955D583D47531766E6FC /* Pods_Brainstem_substrateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8274E8EE65BB4B1A47C8423 /* Pods_Brainstem_substrateTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		226F81892A5664E400D5C4F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 226F81672A5664E200D5C4F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226F816E2A5664E200D5C4F1;
+			remoteInfo = "Brainstem-substrate";
+		};
+		226F81932A5664E400D5C4F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 226F81672A5664E200D5C4F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226F816E2A5664E200D5C4F1;
+			remoteInfo = "Brainstem-substrate";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		059F4A703B16C0A2E5EF51EC /* Pods_Brainstem_substrate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brainstem_substrate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2229B2342A7E1FCB0047FB10 /* HBR_RR_2021-09-01_1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HBR_RR_2021-09-01_1.txt"; sourceTree = "<group>"; };
+		225881FF2A72570400DC67C8 /* ExtrinsicStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtrinsicStatus.swift; sourceTree = "<group>"; };
+		22657E292A67DFEE007E9944 /* MainViewController+CreateWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+CreateWallet.swift"; sourceTree = "<group>"; };
+		22657E2B2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+ConnectPeaqNetwork.swift"; sourceTree = "<group>"; };
+		226F816F2A5664E200D5C4F1 /* Brainstem-substrate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brainstem-substrate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		226F81722A5664E200D5C4F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		226F81742A5664E200D5C4F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		226F81792A5664E200D5C4F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		226F817C2A5664E200D5C4F1 /* Brainstem_substrate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Brainstem_substrate.xcdatamodel; sourceTree = "<group>"; };
+		226F817E2A5664E400D5C4F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		226F81812A5664E400D5C4F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		226F81832A5664E400D5C4F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		226F81882A5664E400D5C4F1 /* Brainstem-substrateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brainstem-substrateTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		226F818C2A5664E400D5C4F1 /* Brainstem_substrateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brainstem_substrateTests.swift; sourceTree = "<group>"; };
+		226F81922A5664E400D5C4F1 /* Brainstem-substrateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brainstem-substrateUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		226F81962A5664E400D5C4F1 /* Brainstem_substrateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brainstem_substrateUITests.swift; sourceTree = "<group>"; };
+		226F81982A5664E400D5C4F1 /* Brainstem_substrateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brainstem_substrateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2280C8592A70D21000DEB0E5 /* DidInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidInfo.swift; sourceTree = "<group>"; };
+		2280C85B2A714F6600DEB0E5 /* SystemProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemProperties.swift; sourceTree = "<group>"; };
+		229865A92A701E90002029BA /* StorageCodingPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageCodingPath.swift; sourceTree = "<group>"; };
+		229865AB2A701ED6002029BA /* StorageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageResponse.swift; sourceTree = "<group>"; };
+		229865AD2A701F0E002029BA /* Decimal+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+String.swift"; sourceTree = "<group>"; };
+		229865AF2A702130002029BA /* RuntimeVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeVersion.swift; sourceTree = "<group>"; };
+		229865B12A702147002029BA /* AssetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModel.swift; sourceTree = "<group>"; };
+		229865B32A7021E6002029BA /* SiDataTypeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiDataTypeMapper.swift; sourceTree = "<group>"; };
+		229865B62A702280002029BA /* runtime-default.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "runtime-default.json"; sourceTree = "<group>"; };
+		229865B72A702280002029BA /* runtime-peaq.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "runtime-peaq.json"; sourceTree = "<group>"; };
+		229865BA2A7025F8002029BA /* MainViewController+PeaqDid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+PeaqDid.swift"; sourceTree = "<group>"; };
+		229865BC2A702624002029BA /* ConstantCodingPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantCodingPath.swift; sourceTree = "<group>"; };
+		229865BE2A70264F002029BA /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		229865C02A702682002029BA /* BigUInt+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BigUInt+Hex.swift"; sourceTree = "<group>"; };
+		229865C22A7026BE002029BA /* GenerateDidCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateDidCall.swift; sourceTree = "<group>"; };
+		22B94AC12A752566006B5D78 /* MainViewController+CoreApiCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+CoreApiCalls.swift"; sourceTree = "<group>"; };
+		22D6B48C2A656C92004CA3C8 /* SS58FactoryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SS58FactoryExtensions.swift; sourceTree = "<group>"; };
+		22D6B48E2A656CE3004CA3C8 /* SNAddressType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNAddressType.swift; sourceTree = "<group>"; };
+		22D6B4902A656D10004CA3C8 /* SubstrateAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstrateAlias.swift; sourceTree = "<group>"; };
+		22D6B4922A656D67004CA3C8 /* JSONRPCAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRPCAliases.swift; sourceTree = "<group>"; };
+		22F3E28E2A56668900D9954C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		22FFE0952A618A3300AE0B13 /* AccountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
+		22FFE0F12A61BD8900AE0B13 /* StorageQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageQuery.swift; sourceTree = "<group>"; };
+		22FFE0F32A61BE3B00AE0B13 /* StorageUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageUpdate.swift; sourceTree = "<group>"; };
+		2636366023B472F1B71F3A3C /* Pods-Brainstem-substrate-Brainstem-substrateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brainstem-substrate-Brainstem-substrateUITests.release.xcconfig"; path = "Target Support Files/Pods-Brainstem-substrate-Brainstem-substrateUITests/Pods-Brainstem-substrate-Brainstem-substrateUITests.release.xcconfig"; sourceTree = "<group>"; };
+		506BE8EFF738D6E1E34E08A4 /* Pods-Brainstem-substrateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brainstem-substrateTests.debug.xcconfig"; path = "Target Support Files/Pods-Brainstem-substrateTests/Pods-Brainstem-substrateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6E2796CFEA048F9E23028057 /* Pods_Brainstem_substrate_Brainstem_substrateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brainstem_substrate_Brainstem_substrateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8242DA2EF60B3E25D5F2896F /* Pods-Brainstem-substrate-Brainstem-substrateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brainstem-substrate-Brainstem-substrateUITests.debug.xcconfig"; path = "Target Support Files/Pods-Brainstem-substrate-Brainstem-substrateUITests/Pods-Brainstem-substrate-Brainstem-substrateUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8D072AAAA26268297D2A561D /* Pods-Brainstem-substrateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brainstem-substrateTests.release.xcconfig"; path = "Target Support Files/Pods-Brainstem-substrateTests/Pods-Brainstem-substrateTests.release.xcconfig"; sourceTree = "<group>"; };
+		A70682ADC1B08EE5CC1AA617 /* Pods-Brainstem-substrate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brainstem-substrate.release.xcconfig"; path = "Target Support Files/Pods-Brainstem-substrate/Pods-Brainstem-substrate.release.xcconfig"; sourceTree = "<group>"; };
+		C06D6D7811E5A0E2E83B6963 /* Pods-Brainstem-substrate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brainstem-substrate.debug.xcconfig"; path = "Target Support Files/Pods-Brainstem-substrate/Pods-Brainstem-substrate.debug.xcconfig"; sourceTree = "<group>"; };
+		C8274E8EE65BB4B1A47C8423 /* Pods_Brainstem_substrateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brainstem_substrateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		226F816C2A5664E200D5C4F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C756433B666DDBF0869D310 /* Pods_Brainstem_substrate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226F81852A5664E400D5C4F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75EE955D583D47531766E6FC /* Pods_Brainstem_substrateTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226F818F2A5664E400D5C4F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A8638454F55CD2C2FC35D9B /* Pods_Brainstem_substrate_Brainstem_substrateUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		226F81662A5664E200D5C4F1 = {
+			isa = PBXGroup;
+			children = (
+				226F81712A5664E200D5C4F1 /* Brainstem-substrate */,
+				226F818B2A5664E400D5C4F1 /* Brainstem-substrateTests */,
+				226F81952A5664E400D5C4F1 /* Brainstem-substrateUITests */,
+				226F81702A5664E200D5C4F1 /* Products */,
+				E9FB6C6D7604A87C944BE6FC /* Pods */,
+				F0DCEBEEA7819ACFFB359156 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		226F81702A5664E200D5C4F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				226F816F2A5664E200D5C4F1 /* Brainstem-substrate.app */,
+				226F81882A5664E400D5C4F1 /* Brainstem-substrateTests.xctest */,
+				226F81922A5664E400D5C4F1 /* Brainstem-substrateUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		226F81712A5664E200D5C4F1 /* Brainstem-substrate */ = {
+			isa = PBXGroup;
+			children = (
+				2280C8582A70D17500DEB0E5 /* Custom */,
+				229865B52A702244002029BA /* Resources */,
+				22D6B48B2A656C80004CA3C8 /* Utils */,
+				226F81722A5664E200D5C4F1 /* AppDelegate.swift */,
+				226F81742A5664E200D5C4F1 /* SceneDelegate.swift */,
+				22F3E28E2A56668900D9954C /* MainViewController.swift */,
+				22657E292A67DFEE007E9944 /* MainViewController+CreateWallet.swift */,
+				22657E2B2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift */,
+				229865BA2A7025F8002029BA /* MainViewController+PeaqDid.swift */,
+				22B94AC12A752566006B5D78 /* MainViewController+CoreApiCalls.swift */,
+				226F81782A5664E200D5C4F1 /* Main.storyboard */,
+				226F817E2A5664E400D5C4F1 /* Assets.xcassets */,
+				226F81802A5664E400D5C4F1 /* LaunchScreen.storyboard */,
+				226F81832A5664E400D5C4F1 /* Info.plist */,
+				226F817B2A5664E200D5C4F1 /* Brainstem_substrate.xcdatamodeld */,
+			);
+			path = "Brainstem-substrate";
+			sourceTree = "<group>";
+		};
+		226F818B2A5664E400D5C4F1 /* Brainstem-substrateTests */ = {
+			isa = PBXGroup;
+			children = (
+				226F818C2A5664E400D5C4F1 /* Brainstem_substrateTests.swift */,
+			);
+			path = "Brainstem-substrateTests";
+			sourceTree = "<group>";
+		};
+		226F81952A5664E400D5C4F1 /* Brainstem-substrateUITests */ = {
+			isa = PBXGroup;
+			children = (
+				226F81962A5664E400D5C4F1 /* Brainstem_substrateUITests.swift */,
+				226F81982A5664E400D5C4F1 /* Brainstem_substrateUITestsLaunchTests.swift */,
+			);
+			path = "Brainstem-substrateUITests";
+			sourceTree = "<group>";
+		};
+		2280C8582A70D17500DEB0E5 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				229865C22A7026BE002029BA /* GenerateDidCall.swift */,
+				229865A92A701E90002029BA /* StorageCodingPath.swift */,
+				22D6B4902A656D10004CA3C8 /* SubstrateAlias.swift */,
+				22D6B4922A656D67004CA3C8 /* JSONRPCAliases.swift */,
+				2280C8592A70D21000DEB0E5 /* DidInfo.swift */,
+				2280C85B2A714F6600DEB0E5 /* SystemProperties.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		229865B52A702244002029BA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2229B2342A7E1FCB0047FB10 /* HBR_RR_2021-09-01_1.txt */,
+				229865B62A702280002029BA /* runtime-default.json */,
+				229865B72A702280002029BA /* runtime-peaq.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		22D6B48B2A656C80004CA3C8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				22FFE0F12A61BD8900AE0B13 /* StorageQuery.swift */,
+				22FFE0F32A61BE3B00AE0B13 /* StorageUpdate.swift */,
+				22FFE0952A618A3300AE0B13 /* AccountInfo.swift */,
+				22D6B48C2A656C92004CA3C8 /* SS58FactoryExtensions.swift */,
+				22D6B48E2A656CE3004CA3C8 /* SNAddressType.swift */,
+				229865AB2A701ED6002029BA /* StorageResponse.swift */,
+				229865AD2A701F0E002029BA /* Decimal+String.swift */,
+				229865AF2A702130002029BA /* RuntimeVersion.swift */,
+				229865B12A702147002029BA /* AssetModel.swift */,
+				229865B32A7021E6002029BA /* SiDataTypeMapper.swift */,
+				229865BC2A702624002029BA /* ConstantCodingPath.swift */,
+				229865BE2A70264F002029BA /* Block.swift */,
+				229865C02A702682002029BA /* BigUInt+Hex.swift */,
+				225881FF2A72570400DC67C8 /* ExtrinsicStatus.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E9FB6C6D7604A87C944BE6FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C06D6D7811E5A0E2E83B6963 /* Pods-Brainstem-substrate.debug.xcconfig */,
+				A70682ADC1B08EE5CC1AA617 /* Pods-Brainstem-substrate.release.xcconfig */,
+				8242DA2EF60B3E25D5F2896F /* Pods-Brainstem-substrate-Brainstem-substrateUITests.debug.xcconfig */,
+				2636366023B472F1B71F3A3C /* Pods-Brainstem-substrate-Brainstem-substrateUITests.release.xcconfig */,
+				506BE8EFF738D6E1E34E08A4 /* Pods-Brainstem-substrateTests.debug.xcconfig */,
+				8D072AAAA26268297D2A561D /* Pods-Brainstem-substrateTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F0DCEBEEA7819ACFFB359156 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				059F4A703B16C0A2E5EF51EC /* Pods_Brainstem_substrate.framework */,
+				6E2796CFEA048F9E23028057 /* Pods_Brainstem_substrate_Brainstem_substrateUITests.framework */,
+				C8274E8EE65BB4B1A47C8423 /* Pods_Brainstem_substrateTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		226F816E2A5664E200D5C4F1 /* Brainstem-substrate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226F819C2A5664E400D5C4F1 /* Build configuration list for PBXNativeTarget "Brainstem-substrate" */;
+			buildPhases = (
+				4107E53E134C21695BE401E3 /* [CP] Check Pods Manifest.lock */,
+				226F816B2A5664E200D5C4F1 /* Sources */,
+				226F816C2A5664E200D5C4F1 /* Frameworks */,
+				226F816D2A5664E200D5C4F1 /* Resources */,
+				AED2392F52B360A32D1B99C3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Brainstem-substrate";
+			productName = "Brainstem-substrate";
+			productReference = 226F816F2A5664E200D5C4F1 /* Brainstem-substrate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		226F81872A5664E400D5C4F1 /* Brainstem-substrateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226F819F2A5664E400D5C4F1 /* Build configuration list for PBXNativeTarget "Brainstem-substrateTests" */;
+			buildPhases = (
+				6A133E0E3D6F98674F9B6E4B /* [CP] Check Pods Manifest.lock */,
+				226F81842A5664E400D5C4F1 /* Sources */,
+				226F81852A5664E400D5C4F1 /* Frameworks */,
+				226F81862A5664E400D5C4F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				226F818A2A5664E400D5C4F1 /* PBXTargetDependency */,
+			);
+			name = "Brainstem-substrateTests";
+			productName = "Brainstem-substrateTests";
+			productReference = 226F81882A5664E400D5C4F1 /* Brainstem-substrateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		226F81912A5664E400D5C4F1 /* Brainstem-substrateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226F81A22A5664E400D5C4F1 /* Build configuration list for PBXNativeTarget "Brainstem-substrateUITests" */;
+			buildPhases = (
+				14298EEDBA876025ADDEDEB8 /* [CP] Check Pods Manifest.lock */,
+				226F818E2A5664E400D5C4F1 /* Sources */,
+				226F818F2A5664E400D5C4F1 /* Frameworks */,
+				226F81902A5664E400D5C4F1 /* Resources */,
+				092CF88AD58E7B991243A1AC /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				226F81942A5664E400D5C4F1 /* PBXTargetDependency */,
+			);
+			name = "Brainstem-substrateUITests";
+			productName = "Brainstem-substrateUITests";
+			productReference = 226F81922A5664E400D5C4F1 /* Brainstem-substrateUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		226F81672A5664E200D5C4F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					226F816E2A5664E200D5C4F1 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					226F81872A5664E400D5C4F1 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 226F816E2A5664E200D5C4F1;
+					};
+					226F81912A5664E400D5C4F1 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 226F816E2A5664E200D5C4F1;
+					};
+				};
+			};
+			buildConfigurationList = 226F816A2A5664E200D5C4F1 /* Build configuration list for PBXProject "Brainstem-substrate" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 226F81662A5664E200D5C4F1;
+			productRefGroup = 226F81702A5664E200D5C4F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				226F816E2A5664E200D5C4F1 /* Brainstem-substrate */,
+				226F81872A5664E400D5C4F1 /* Brainstem-substrateTests */,
+				226F81912A5664E400D5C4F1 /* Brainstem-substrateUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		226F816D2A5664E200D5C4F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				229865B92A702280002029BA /* runtime-peaq.json in Resources */,
+				226F81822A5664E400D5C4F1 /* LaunchScreen.storyboard in Resources */,
+				226F817F2A5664E400D5C4F1 /* Assets.xcassets in Resources */,
+				229865B82A702280002029BA /* runtime-default.json in Resources */,
+				2229B2352A7E1FCB0047FB10 /* HBR_RR_2021-09-01_1.txt in Resources */,
+				226F817A2A5664E200D5C4F1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226F81862A5664E400D5C4F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226F81902A5664E400D5C4F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		092CF88AD58E7B991243A1AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Brainstem-substrate-Brainstem-substrateUITests/Pods-Brainstem-substrate-Brainstem-substrateUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Brainstem-substrate-Brainstem-substrateUITests/Pods-Brainstem-substrate-Brainstem-substrateUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Brainstem-substrate-Brainstem-substrateUITests/Pods-Brainstem-substrate-Brainstem-substrateUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14298EEDBA876025ADDEDEB8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Brainstem-substrate-Brainstem-substrateUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4107E53E134C21695BE401E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Brainstem-substrate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A133E0E3D6F98674F9B6E4B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Brainstem-substrateTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AED2392F52B360A32D1B99C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Brainstem-substrate/Pods-Brainstem-substrate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Brainstem-substrate/Pods-Brainstem-substrate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Brainstem-substrate/Pods-Brainstem-substrate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		226F816B2A5664E200D5C4F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				229865AE2A701F0E002029BA /* Decimal+String.swift in Sources */,
+				229865BF2A70264F002029BA /* Block.swift in Sources */,
+				22657E2C2A67E090007E9944 /* MainViewController+ConnectPeaqNetwork.swift in Sources */,
+				229865AC2A701ED6002029BA /* StorageResponse.swift in Sources */,
+				226F81732A5664E200D5C4F1 /* AppDelegate.swift in Sources */,
+				226F817D2A5664E200D5C4F1 /* Brainstem_substrate.xcdatamodeld in Sources */,
+				226F81752A5664E200D5C4F1 /* SceneDelegate.swift in Sources */,
+				22F3E28F2A56668900D9954C /* MainViewController.swift in Sources */,
+				229865C32A7026BE002029BA /* GenerateDidCall.swift in Sources */,
+				22B94AC22A752566006B5D78 /* MainViewController+CoreApiCalls.swift in Sources */,
+				22D6B48D2A656C92004CA3C8 /* SS58FactoryExtensions.swift in Sources */,
+				229865C12A702682002029BA /* BigUInt+Hex.swift in Sources */,
+				2280C85C2A714F6600DEB0E5 /* SystemProperties.swift in Sources */,
+				225882002A72570400DC67C8 /* ExtrinsicStatus.swift in Sources */,
+				229865BB2A7025F8002029BA /* MainViewController+PeaqDid.swift in Sources */,
+				22FFE0F22A61BD8900AE0B13 /* StorageQuery.swift in Sources */,
+				22D6B48F2A656CE3004CA3C8 /* SNAddressType.swift in Sources */,
+				229865BD2A702624002029BA /* ConstantCodingPath.swift in Sources */,
+				229865B42A7021E6002029BA /* SiDataTypeMapper.swift in Sources */,
+				22D6B4932A656D67004CA3C8 /* JSONRPCAliases.swift in Sources */,
+				229865B02A702130002029BA /* RuntimeVersion.swift in Sources */,
+				22FFE0962A618A3300AE0B13 /* AccountInfo.swift in Sources */,
+				2280C85A2A70D21000DEB0E5 /* DidInfo.swift in Sources */,
+				22D6B4912A656D10004CA3C8 /* SubstrateAlias.swift in Sources */,
+				22FFE0F42A61BE3B00AE0B13 /* StorageUpdate.swift in Sources */,
+				229865AA2A701E90002029BA /* StorageCodingPath.swift in Sources */,
+				229865B22A702147002029BA /* AssetModel.swift in Sources */,
+				22657E2A2A67DFEE007E9944 /* MainViewController+CreateWallet.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226F81842A5664E400D5C4F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226F818D2A5664E400D5C4F1 /* Brainstem_substrateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226F818E2A5664E400D5C4F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226F81992A5664E400D5C4F1 /* Brainstem_substrateUITestsLaunchTests.swift in Sources */,
+				226F81972A5664E400D5C4F1 /* Brainstem_substrateUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		226F818A2A5664E400D5C4F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226F816E2A5664E200D5C4F1 /* Brainstem-substrate */;
+			targetProxy = 226F81892A5664E400D5C4F1 /* PBXContainerItemProxy */;
+		};
+		226F81942A5664E400D5C4F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226F816E2A5664E200D5C4F1 /* Brainstem-substrate */;
+			targetProxy = 226F81932A5664E400D5C4F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		226F81782A5664E200D5C4F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				226F81792A5664E200D5C4F1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		226F81802A5664E400D5C4F1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				226F81812A5664E400D5C4F1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		226F819A2A5664E400D5C4F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		226F819B2A5664E400D5C4F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		226F819D2A5664E400D5C4F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C06D6D7811E5A0E2E83B6963 /* Pods-Brainstem-substrate.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Brainstem-substrate/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.Brainstem-substrate";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		226F819E2A5664E400D5C4F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A70682ADC1B08EE5CC1AA617 /* Pods-Brainstem-substrate.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Brainstem-substrate/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.Brainstem-substrate";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		226F81A02A5664E400D5C4F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 506BE8EFF738D6E1E34E08A4 /* Pods-Brainstem-substrateTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.Brainstem-substrateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brainstem-substrate.app/Brainstem-substrate";
+			};
+			name = Debug;
+		};
+		226F81A12A5664E400D5C4F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D072AAAA26268297D2A561D /* Pods-Brainstem-substrateTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.Brainstem-substrateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brainstem-substrate.app/Brainstem-substrate";
+			};
+			name = Release;
+		};
+		226F81A32A5664E400D5C4F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8242DA2EF60B3E25D5F2896F /* Pods-Brainstem-substrate-Brainstem-substrateUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.Brainstem-substrateUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Brainstem-substrate";
+			};
+			name = Debug;
+		};
+		226F81A42A5664E400D5C4F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2636366023B472F1B71F3A3C /* Pods-Brainstem-substrate-Brainstem-substrateUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.Brainstem-substrateUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Brainstem-substrate";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		226F816A2A5664E200D5C4F1 /* Build configuration list for PBXProject "Brainstem-substrate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226F819A2A5664E400D5C4F1 /* Debug */,
+				226F819B2A5664E400D5C4F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		226F819C2A5664E400D5C4F1 /* Build configuration list for PBXNativeTarget "Brainstem-substrate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226F819D2A5664E400D5C4F1 /* Debug */,
+				226F819E2A5664E400D5C4F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		226F819F2A5664E400D5C4F1 /* Build configuration list for PBXNativeTarget "Brainstem-substrateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226F81A02A5664E400D5C4F1 /* Debug */,
+				226F81A12A5664E400D5C4F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		226F81A22A5664E400D5C4F1 /* Build configuration list for PBXNativeTarget "Brainstem-substrateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226F81A32A5664E400D5C4F1 /* Debug */,
+				226F81A42A5664E400D5C4F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		226F817B2A5664E200D5C4F1 /* Brainstem_substrate.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				226F817C2A5664E200D5C4F1 /* Brainstem_substrate.xcdatamodel */,
+			);
+			currentVersion = 226F817C2A5664E200D5C4F1 /* Brainstem_substrate.xcdatamodel */;
+			path = Brainstem_substrate.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 226F81672A5664E200D5C4F1 /* Project object */;
+}
