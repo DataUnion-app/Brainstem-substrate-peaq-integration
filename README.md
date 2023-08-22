@@ -1,4 +1,7 @@
-# Brainstem-substrate
+# Brainstem substrate wallet integration
+
+This work was done by DataUnion (https://dataunion.app) on behalf of Brainstem (https://brainstem.health) for a grant from peaq (https://peaq.network).
+The code is an implementation of a substrate wallet in Swift. This wallet is then used to register/login to the Brainstem DataUnion backend. A sample health data file is uploaded from a sensor, that sensor is registered with the peaq network and receives a DID as its identifier. This identifier is attached to the sensor data in the Brainstem DataUnion.
 
 ## How to run the code
     - Install XCode(> 13.4.1) on Mac
@@ -439,3 +442,4 @@
 
 
 
+&copy; DataUnion Foundation PTE. LTD. 2023
